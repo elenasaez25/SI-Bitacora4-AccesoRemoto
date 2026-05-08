@@ -1,0 +1,36 @@
+## Docker Compose para laboratorios de seguridad informática
+## Alumno: Elena Sáez Lascurain
+## Asignatura: Sistemas Informáticos
+
+version: '3.8'
+
+services:
+# Servidor SSH para prácticas de seguridad informática, accesible por el puerto 2222
+  servidor_ssh:
+    image: linuxserver/openssh-server:latest  
+    container_name: lab_ssh_servidor
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - USER_NAME=alumno
+      - USER_PASSWORD=sistemas_informaticos
+      - PASSWORD_ACCESS=true
+    ports:
+      - "2222:2222" # Puerto para acceso vía SSH
+    restart: unless-stopped
+
+  # Servidor RDP para prácticas de seguridad informática, accesible por el puerto 3389
+
+  servidor_rdp:
+    image: linuxserver/webtop:ubuntu-xfce
+    container_name: lab_rdp_servidor
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    ports:
+      - "3389:3389" # Puerto para acceso vía RDP
+      - "3000:3000" # Puerto para acceso a la interfaz web de Webtop
+    shm_size: "1gb" # Aumentar el tamaño de la memoria compartida para mejorar el rendimiento
+    restart: unless-stopped
