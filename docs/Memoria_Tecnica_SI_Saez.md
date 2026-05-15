@@ -10,11 +10,11 @@
 
 # Índice {#índice}
 
-[**Índice	2**](#índice)
+[**Índice**](#índice)
 
-[**Título 1	3**](#título-1)
+[**Título 1**](#título-1)
 
-[Título 2	3](#título-2)
+[Título 2](#título-2)
 
 # Título 1 {#título-1}
 
