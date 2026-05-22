@@ -69,6 +69,9 @@ Con **Docker Compose**, los componentes de Guacamole, la aplicación web y la ba
 
 Guacamole con Docker resuelve la dispersión del control de accesos, reduce la superficie de cualquier tipo de ataque y además elimina la dependencia de clientes específicos. Frente al RDP directo máquina a máquina, esta arquitectura representa una característica fundamental en la seguridad.
 
+## 2. Estimación de Costes de Infraestructura
+<img width="806" height="195" alt="image" src="https://github.com/user-attachments/assets/3a569054-5840-4c35-bcd3-549257642ce1" />
+
 
 
 
