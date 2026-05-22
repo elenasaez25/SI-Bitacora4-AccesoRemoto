@@ -28,7 +28,7 @@
 
 --- 
 
-### **Análisis de Necesidades** {#título-1} 
+# 1. **Análisis de Necesidades** {#título-1} 
 En este análisis, voy a estar respondiendo a las cuestiones sobre las problemáticas que resolvemos utilizando Guacamole y Docker y por qué elegimos estas soluciones y no conectamos directamente por RDP a cada máquina:
 
 ## El problema que resuelve esta arquitectura {#título-2}
@@ -69,22 +69,22 @@ Con **Docker Compose**, los componentes de Guacamole, la aplicación web y la ba
 
 Guacamole con Docker resuelve la dispersión del control de accesos, reduce la superficie de cualquier tipo de ataque y además elimina la dependencia de clientes específicos. Frente al RDP directo máquina a máquina, esta arquitectura representa una característica fundamental en la seguridad.
 
-## 2. Estimación de Costes de Infraestructura  
+# 2. Estimación de Costes de Infraestructura  
 En esta imágen se analiza una tabla profesional que calcula el coste mensual de alojar nuestra aplicación, incluyendo el cómputo, almacenamiento y transferencia de red, todo seguido del cálculo del subtotal y el IVA (21%) para obtener el **Total Mensual.**
 <img width="806" height="195" alt="image" src="https://github.com/user-attachments/assets/3a569054-5840-4c35-bcd3-549257642ce1" />
 
-## 3. Estrategia de Despliegue y Comunicación  
+# 3. Estrategia de Despliegue y Comunicación  
 
 Para el despliegue de la aplicación en el servidor de producción utilizaremos **SFTP (SSH File Transfer Protocol)** como protocolo de transferencia de ficheros. A diferencia del FTP tradicional, que transmite datos en texto plano sin ningún tipo de cifrado, SFTP cifra tanto las credenciales como los datos durante la transferencia mediante el protocolo SSH, garantizando así la integridad de la información recibida, siendo esta la opción más segura y óptima para mover el código y archivos sensibles entre el entorno de desarrollo local y el servidor remoto.
 
 A parte de esto, también estaremos llevando a cabo el uso de **integraciones Cloud nativas** como GitHub Actions, que permite automatizar el despliegue directamente desde el repositorio de código sin necesidad de transferir ficheros manualmente.  
 Descartamos completamente el uso del **FTP tradicional** al ser un protocolo obsoleto que transmite datos sin cifrar, suponiendo un riesgo de seguridad inaceptable en entornos de producción.
 
-### Mensajería
+## Mensajería
 
 El equipo utilizará **Discord** como herramienta principal de mensajería para la coordinación técnica del proyecto. Se configurarán canales de chat específicos por área y se integrarán bots de alertas automáticas que permitan escribir en el canal correspondiente, de forma que si el servidor cae o se produce un error crítico, el equipo recibirá una notificación inmediata. Esto permite una respuesta rápida ante incidencias sin necesidad de estar monitorizando el servidor manualmente.
 
-## 4. Justificación Científica
+# 4. Justificación Científica
 
 La relación de la conclusión del artículo escogido sobre **la seguridad en Docker** con mi proyecto es que, la gran cantidad de procesos que se pueden llegar a automatizar gracias a esta tecnología es universal. Esta tecnología aporta la libertad de poder revisar si los procesos instalados son vulnerables, y poder monitorizar en tiempo real si estos contenedores sufren cualquier tipo de ataque externo.  
 Este artículo apoya mi proyecto de manera de que, al haber estado utilizando la tecnología **Docker** y comprobar que otro usuario también la empleó en su proyecto, me aseguro de que el propósito de uso de la tecnología la he empleado correctamente.
