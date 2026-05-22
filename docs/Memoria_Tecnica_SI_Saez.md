@@ -72,6 +72,15 @@ Guacamole con Docker resuelve la dispersión del control de accesos, reduce la s
 ## 2. Estimación de Costes de Infraestructura
 <img width="806" height="195" alt="image" src="https://github.com/user-attachments/assets/3a569054-5840-4c35-bcd3-549257642ce1" />
 
+## 3. Estrategia de Despliegue y Comunicación  
 
+Para el despliegue de la aplicación en el servidor de producción utilizaremos **SFTP (SSH File Transfer Protocol)** como protocolo de transferencia de ficheros. A diferencia del FTP tradicional, que transmite datos en texto plano sin ningún tipo de cifrado, SFTP cifra tanto las credenciales como los datos durante la transferencia mediante el protocolo SSH, garantizando así la integridad de la información recibida, siendo esta la opción más segura y óptima para mover el código y archivos sensibles entre el entorno de desarrollo local y el servidor remoto.
+
+A parte de esto, también estaremos llevando a cabo el uso de **integraciones Cloud nativas** como GitHub Actions, que permite automatizar el despliegue directamente desde el repositorio de código sin necesidad de transferir ficheros manualmente.  
+Descartamos completamente el uso del **FTP tradicional** al ser un protocolo obsoleto que transmite datos sin cifrar, suponiendo un riesgo de seguridad inaceptable en entornos de producción.
+
+### Mensajería
+
+El equipo utilizará **Discord** como herramienta principal de mensajería para la coordinación técnica del proyecto. Se configurarán canales de chat específicos por área y se integrarán bots de alertas automáticas que permitan escribir en el canal correspondiente, de forma que si el servidor cae o se produce un error crítico, el equipo recibirá una notificación inmediata. Esto permite una respuesta rápida ante incidencias sin necesidad de estar monitorizando el servidor manualmente.
 
 
